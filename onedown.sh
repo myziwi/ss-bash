@@ -1,6 +1,6 @@
 ###获取SSR安装包并安装环境变量
 cd ~
-yum install git bc libevent wget -y
+yum install git bc libevent -y
 git clone https://github.com/myziwi/shadowsocksr.git
 git clone https://github.com/myziwi/ss-bash.git
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
