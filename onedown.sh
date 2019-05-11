@@ -2,6 +2,7 @@
 cd ~
 yum install git bc libevent wget -y
 git clone https://github.com/myziwi/shadowsocksr.git
+git clone https://github.com/myziwi/ss-bash.git
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
 pip install greenlet
