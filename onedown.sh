@@ -115,4 +115,5 @@ sysctl -p
 ###新增默认9000用户并启动服务
 sh /root/ss-bash/ssadmin.sh add 9000 1qaz@WSX 100G
 sh /root/ss-bash/ssadmin.sh start
-sh /root/ss-bash/ssadmin.sh status
+sh /root/ss-bash/ssadmin.sh show
+sh /root/ss-bash/ssadmin.sh showpw
