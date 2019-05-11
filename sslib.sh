@@ -21,7 +21,7 @@
 # 流量采样间隔,单位为秒
 INTERVEL=15
 # 指定Shadowsocks程序文件
-SSSERVER=/root/shadowsocks/shadowsocks/server.py
+SSSERVER=/root/shadowsocksr/shadowsocks/server.py
 
 SSSERVER_NAME=`basename $SSSERVER`
 
