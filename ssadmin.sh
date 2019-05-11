@@ -160,7 +160,7 @@ restart_ss () {
     
 soft_restart_ss () {
     if check_ssserver; then 
-        kill -s SIGQUIT `cat $SSSERVER_PID`
+        kill -9 `cat $SSSERVER_PID`
         echo 'ssserver已关闭'
         kill `cat $SSCOUNTER_PID`
         echo 'sscounter.sh已关闭'
@@ -239,7 +239,7 @@ $PORT $PWORD $TLIMIT" >> $USER_FILE;
 # 重新生成配置文件，并加载
     if [ -e $SSSERVER_PID ]; then
         create_json
-        kill -s SIGQUIT `cat $SSSERVER_PID`
+        kill -9 `cat $SSSERVER_PID`
         add_rules $PORT
         run_ssserver
     fi
@@ -266,7 +266,7 @@ del_user () {
 # 重新生成配置文件，并加载
     if [ -e $SSSERVER_PID ]; then
         create_json
-        kill -s SIGQUIT `cat $SSSERVER_PID`
+        kill -9 `cat $SSSERVER_PID`
         del_rules $PORT 2>/dev/null
         del_reject_rules $PORT 2>/dev/null
         run_ssserver
@@ -309,7 +309,7 @@ change_user () {
         # 重新生成配置文件，并加载
         if [ -e $SSSERVER_PID ]; then
             create_json
-            kill -s SIGQUIT `cat $SSSERVER_PID`
+            kill -9 `cat $SSSERVER_PID`
             add_rules $PORT
             run_ssserver
         fi
@@ -353,7 +353,7 @@ change_passwd () {
         # 重新生成配置文件，并加载
         if [ -e $SSSERVER_PID ]; then
             create_json
-            kill -s SIGQUIT `cat $SSSERVER_PID`
+            kill -9 `cat $SSSERVER_PID`
             add_rules $PORT
             run_ssserver
         fi
