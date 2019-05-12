@@ -11,7 +11,7 @@ pip install gevent
  
 ###修改配置文件
 #==/etc/security/limits.conf==#
-sed -i'/^# End of file/i* soft nofile 51200\n* hard nofile 51200' /etc/security/limits.conf
+sed -i '/^# End of file/i* soft nofile 51200\n* hard nofile 51200' /etc/security/limits.conf
  
 #==/etc/sysctl.d/local.conf==#
 >/etc/sysctl.d/local.conf
