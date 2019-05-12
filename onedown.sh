@@ -108,7 +108,9 @@ EOF
 
 ###即时修改配置生效
 ulimit -n 51200
+ulimit -a
 echo 3 > /proc/sys/net/ipv4/tcp_fastopen
+cat /proc/sys/net/ipv4/tcp_fastopen
 sysctl --system
 sysctl -p
 
