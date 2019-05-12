@@ -83,8 +83,8 @@ net.ipv4.conf.all.promote_secondaries=1
 net.ipv4.tcp_allowed_congestion_control = bbr
 net.ipv4.tcp_congestion_control = bbr
 # Memory
-net.ipv4.tcp_wmem = 4096	65536 16777216
-net.ipv4.tcp_rmem = 4096	327680 16777216
+net.ipv4.tcp_wmem = 4096 65536 16777216
+net.ipv4.tcp_rmem = 4096 327680 16777216
 net.ipv4.tcp_mem = 327680 327680 16777216
 net.core.rmem_default = 327680
 net.core.wmem_default = 65536
