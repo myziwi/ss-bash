@@ -6,5 +6,7 @@
 "protocol_param":"2",
 "obfs":"plain",
 "obfs_param": "",
+"redirect": "",
+"dns_ipv6": false,
 "fast_open": true,
 "workers": 1,
