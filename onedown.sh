@@ -12,7 +12,9 @@ pip install gevent
 ###修改配置文件
 #==/etc/security/limits.conf==#
 sed -i '/^# End of file/i* soft nofile 51200\n* hard nofile 51200' /etc/security/limits.conf
- 
+
+#------------------------------
+
 #==/etc/sysctl.d/local.conf==#
 >/etc/sysctl.d/local.conf
 cat >>/etc/sysctl.d/local.conf<<EOF
@@ -60,6 +62,8 @@ net.ipv4.tcp_congestion_control = hybla
 # net.ipv4.tcp_congestion_control = cubic
 EOF
 
+#------------------------------
+
 #==/etc/sysctl.conf==#
 >/etc/sysctl.conf
 cat >>/etc/sysctl.conf<<EOF
@@ -105,6 +109,7 @@ vm.dirty_background_ratio = 20
 vm.swappiness = 2
 EOF
 
+#------------------------------
 
 ###即时修改配置生效
 ulimit -n 51200
@@ -114,8 +119,20 @@ cat /proc/sys/net/ipv4/tcp_fastopen
 sysctl --system
 sysctl -p
 
+#------------------------------
+
+###更改时区
+\cp -rf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+#------------------------------
+
 ###新增默认9000用户并启动服务
-sh /root/ss-bash/ssadmin.sh add 9000 1qaz@WSX 100G
+sh /root/ss-bash/ssadmin.sh add 9000 1qaz@WSX 30G
 sh /root/ss-bash/ssadmin.sh start
 sh /root/ss-bash/ssadmin.sh show
 sh /root/ss-bash/ssadmin.sh showpw
+
+#------------------------------
+
+###定时任务每月1号重置流量
+echo "0 0 1 * * ?  sh /root/ss-bash/ssadmin.sh reset_all_used">>/var/spool/cron/root
