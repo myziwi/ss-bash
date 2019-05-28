@@ -2,7 +2,7 @@
 cd ~
 yum install git bc libevent -y
 git clone https://github.com/myziwi/shadowsocksr.git
-git clone https://github.com/myziwi/ss-bash.git
+git clone https://github.com/myziwi/ssr-bash.git
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
 pip install greenlet
@@ -127,12 +127,12 @@ sysctl -p
 #------------------------------
 
 ###新增默认9000用户并启动服务
-sh /root/ss-bash/ssadmin.sh add 9000 1qaz@WSX 30G
-sh /root/ss-bash/ssadmin.sh start
-sh /root/ss-bash/ssadmin.sh show
-sh /root/ss-bash/ssadmin.sh showpw
+sh /root/ssr-bash/ssadmin.sh add 9000 1qaz@WSX 30G
+sh /root/ssr-bash/ssadmin.sh start
+sh /root/ssr-bash/ssadmin.sh show
+sh /root/ssr-bash/ssadmin.sh showpw
 
 #------------------------------
 
 ###定时任务每月1号重置流量
-echo "0 0 1 * * ?  sh /root/ss-bash/ssadmin.sh reset_all_used">>/var/spool/cron/root
+echo "0 0 1 * * ?  sh /root/ssr-bash/ssadmin.sh reset_all_used">>/var/spool/cron/root
