@@ -3,7 +3,7 @@
 "timeout": 60,
 "method": "none",
 "protocol":"auth_chain_a",
-"protocol_param":"2",
+"protocol_param":"1",
 "obfs":"plain",
 "obfs_param": "",
 "redirect": "",
