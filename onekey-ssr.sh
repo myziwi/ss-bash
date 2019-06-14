@@ -135,4 +135,4 @@ sh /root/ssr-bash/ssadmin.sh showpw
 #------------------------------
 
 ###定时任务每月1号重置流量
-echo "0 0 1 * * ?  sh /root/ssr-bash/ssadmin.sh reset_all_used">>/var/spool/cron/root
+echo "0 0 1 * * sh /root/ssr-bash/ssadmin.sh reset_all_used">>/var/spool/cron/root
